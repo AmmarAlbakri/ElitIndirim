@@ -1,0 +1,42 @@
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 20px 0;
+  .form-full {
+    padding-bottom: 0;
+    width: 100%;
+  }
+}
+    .radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    ion-col {
+      padding: 0;
+    }
+  }
+
+  .radio-button {
+    margin: 5px;
+  }
+
+.error {
+  color: red;
+}
+img{
+  max-width: 50%;
+}
+.removeImg-btn {
+    width: 30px;
+    height: 30px;
+    --background: red;
+    top: -8px;
+    left: 0px;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+}

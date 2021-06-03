@@ -1,0 +1,44 @@
+ion-content {
+  font-family: var(--ion-font-family) !important;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 20px 0;
+  .form-full {
+    padding-bottom: 0;
+    width: 100%;
+  }
+
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    ion-col {
+      padding: 0;
+    }
+  }
+
+  .radio-button {
+    margin: 5px;
+  }
+
+  .check-row {
+    // margin-bottom: 10px;
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.error {
+  color: red;
+}
+.link{
+  color: var(--ion-color-primary);
+  text-decoration: underline;
+}

@@ -1,0 +1,53 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{"feedback" | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form">
+    <mat-form-field class="form-full">
+      <input required matInput placeholder="{{'full_name' | translate}}" [formControl]="fullName">
+      <mat-error *ngIf="fullNameError">
+        {{"fullName_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input required matInput placeholder="{{'email' | translate}}" [formControl]="email">
+      <mat-error *ngIf="emailError">
+        {{"email_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input required matInput placeholder="{{'phone' | translate}}" [formControl]="phone">
+      <mat-error *ngIf="phoneError">
+        {{"phone_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <textarea matInput required placeholder="{{'your_message' | translate}}" rows="5" [formControl]="message"
+        (focusout)="checkMessage()">
+      </textarea>
+      <mat-error *ngIf="messageError">
+        {{"message_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+  </form>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar (click)="checkAll()" color="primary">
+    <ion-row class="g-row-center full-width">
+      {{'send' | translate}}
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

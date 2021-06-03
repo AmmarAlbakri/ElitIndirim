@@ -1,0 +1,60 @@
+[
+    {
+        "orderId": "09876543234567890987654",
+        "date": "05/05/2933",
+        "totalCost": "200TL",
+        "status": "pending",
+        "vendor": "Alpha Giyim",
+        "brand": "H&M",
+        "paymentAddress": {
+            "header": "Ev Adresi",
+            "firstName": "Ammar",
+            "lastName": "Albakri",
+            "address": "k;dsgbwgjbklj",
+            "phone": "09876543"
+        },
+        "shippingAddress": {
+            "header": "Ev Adresi",
+            "firstName": "Ammar",
+            "lastName": "Albakri",
+            "address": "k;dsgbwgjbklj",
+            "phone": "98765434567"
+        },
+        "totalShipCost": "20TL",
+        "subTotalCost": "10TL",
+        "product": {
+            "image": "assets/images/p1.png",
+            "title": "Kadin Elbise",
+            "subtitle": "kadin"
+        },
+        "paymentMethod": {
+            "type": "credit card",
+            "number": "000000000000"
+        },
+        "trackNo": "11111111111111",
+        "orderCost": "210Tl"
+    },
+    {
+        "orderId": "09876543234567890987654",
+        "date": "05/05/2933",
+        "totalCost": "200TL",
+        "status": "pending",
+        "vendor": "Alpha Giyim",
+        "brand": "H&M",
+        "paymentAddress": "lkdjkhffkfidanv",
+        "shippingAddress": ";ofpiubdivj",
+        "totalShipCost": "20TL",
+        "subTotalCost": "10TL",
+        "product": {
+            "image": "assets/images/p1.png",
+            "title": "Kadin Elbise",
+            "subtitle": "kadin"
+        },
+        "paymentMethod": {
+            "type": "credit card",
+            "number": "000000000000"
+        },
+        "trackNo": "11111111111111",
+        "orderCost": "210Tl"
+    }
+]

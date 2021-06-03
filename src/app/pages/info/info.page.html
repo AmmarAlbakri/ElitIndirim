@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="this.globals.getActiveTab() == 'profile'" class="back-btn" defaultHref="tabs/profile"></ion-back-button>
+      <ion-back-button *ngIf="this.globals.getActiveTab() != 'profile'" class="back-btn" defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{pageName | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="infoCard" *ngIf="pageContent">
+    <div class="infoContentDiv" [innerHtml]="pageContent|safe:''"></div>
+  </ion-card>
+  <div style="height: 60px; background: #fff;"></div>
+</ion-content>

@@ -1,0 +1,190 @@
+<ion-header translucent no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button *ngIf="page == 'filter'" (click)="kill()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="page != 'filter'" (click)="slideBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-label class="modal-title">
+        {{"product_filter" | translate}}
+      </ion-label>
+      <!-- <p class="g-grey modal-subtitle">({{numberofProducts}} {{"product_found" | translate}})</p> -->
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides #slider id="slider" [options]="SlideOpts" (ionSlidesDidLoad)="slidesDidLoad(slider)">
+    <!-- First Slide Filter Home -->
+    <ion-slide>
+
+      <ion-list class="full-slide" lines="full">
+        <!-- <ion-item>
+      <ion-label class="normal-size">
+        {{"by_gender"| translate}}
+      </ion-label>
+      <ion-label class="g-grey small-size text-right">
+        {{"choose" | translate}}
+      </ion-label>
+    </ion-item> -->
+        <ion-searchbar [(ngModel)]="input" class="searchbar" [placeholder]="'search' | translate"
+          showCancelButton="never" color="light"></ion-searchbar>
+
+        <ion-item (click)="goTo('category')">
+          <ion-label class="normal-size">
+            {{"by_category"| translate}}
+          </ion-label>
+          <ion-label *ngIf="!filter.categoryName" class="g-grey small-size text-right">
+            {{"choose" | translate}}
+          </ion-label>
+          <ion-label *ngIf="filter.categoryName" class="selected-text small-size text-right">
+            {{filter.categoryName}}
+          </ion-label>
+        </ion-item>
+
+        <ion-item (click)="goTo('brand')">
+          <ion-label class="normal-size">
+            {{"by_brand"| translate}}
+          </ion-label>
+          <ion-label *ngIf="!filter.brandName" class="g-grey small-size text-right">
+            {{"choose" | translate}}
+          </ion-label>
+          <ion-label *ngIf="filter.brandName" class="selected-text small-size text-right">
+            {{filter.brandName}}
+          </ion-label>
+        </ion-item>
+
+        <!-- <ion-item *ngIf="colors" (click)="goTo('color')">
+          <ion-label class="normal-size">
+            {{"by_color"| translate}}
+          </ion-label>
+          <ion-label *ngIf="!selectedValues.color" class="g-grey small-size text-right">
+            {{"choose" | translate}}
+          </ion-label>
+          <ion-label *ngIf="selectedValues.color" class="selected-text small-size text-right">
+            {{selectedValues.color}}
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="sizes" (click)="goTo('size')">
+          <ion-label class="normal-size">
+            {{"by_size"| translate}}
+          </ion-label>
+          <ion-label *ngIf="!selectedValues.size" class="g-grey small-size text-right">
+            {{"choose" | translate}}
+          </ion-label>
+          <ion-label *ngIf="selectedValues.size" class="selected-text small-size text-right">
+            {{selectedValues.size}}
+          </ion-label>
+        </ion-item> -->
+
+        <ion-item *ngFor="let option of selectedOptions" (click)="goToOptions(option)">
+          <ion-label class="normal-size">
+            {{option.option.option}}{{'by' | translate}}
+          </ion-label>
+          <ion-label *ngIf="!option.selectedValue" class="g-grey small-size text-right">
+            {{"choose" | translate}}
+          </ion-label>
+          <ion-label *ngIf="option.selectedValue" class="selected-text small-size text-right">
+            {{option.selectedValue}}
+          </ion-label>
+        </ion-item>
+
+
+        <ion-item (click)="goTo('price')">
+          <ion-label class="normal-size">
+            {{"by_price"| translate}}
+          </ion-label>
+          <!-- <ion-label *ngIf="!filter.priceFrom" class="g-grey small-size text-right">
+            {{"choose" | translate}}
+          </ion-label> -->
+          <ion-label class="selected-text small-size text-right">
+            {{filter.priceFrom}} TL - {{filter.priceTo}} TL
+          </ion-label>
+        </ion-item>
+
+        <!-- <ion-item>
+          <ion-label class="normal-size">
+            {{"hide_prodcuts"| translate}}
+          </ion-label>
+          <ion-toggle color="primary" class="toggle" [(ngModel)]="isHide"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label class="normal-size">
+            {{"only_fast_delivery_products"| translate}}
+          </ion-label>
+          <ion-toggle color="primary" class="toggle" [(ngModel)]="onlyFalse"></ion-toggle>
+        </ion-item> -->
+
+        <ion-button class="filter" (click)="dismissModel()">
+          {{"filter" | translate}}
+        </ion-button>
+
+        <ion-button class="filter" (click)="clearFilters()">
+          {{"clear_filters" | translate}}
+        </ion-button>
+      </ion-list>
+
+    </ion-slide>
+
+    <!-- Data Slide -->
+    <ion-slide>
+      <ion-list *ngIf="page != 'price'" class="full-slide">
+        <ion-item *ngFor="let line of dataSet" (click)="selectValue(line)">
+          <ion-label class="normal-size">
+            {{line}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-grid class="range-grid" *ngIf="page == 'price'">
+        <!-- <ion-row>
+          <ion-col>
+            <ion-label>{{'min' | translate}}</ion-label> 
+          </ion-col>
+          <ion-col>
+            <ion-label>{{'max' | translate}}</ion-label> 
+          </ion-col>
+        </ion-row> -->
+        <ion-row class="range-row">
+          <ion-col style="text-align: start">
+            <ion-input class="input" placeholder="{{'min_value' | translate}}" [(ngModel)]="rangeValue.lower"
+              inputmode="numeric">
+
+            </ion-input>
+          </ion-col>
+          <ion-col size="1" style="padding: 17px 0px;">
+            <ion-label>
+              -
+            </ion-label>
+          </ion-col>
+          <ion-col style="text-align: end">
+            <ion-input class="input" placeholder="{{'max_value' | translate}}" [(ngModel)]="rangeValue.upper"
+              inputmode="numeric">
+
+            </ion-input>
+          </ion-col>
+        </ion-row>
+        <!-- <ion-row>
+          <ion-range dual-knobs pin color="primary" max="300" min="10" [(ngModel)]="rangeValue">
+          </ion-range>
+        </ion-row> -->
+        <ion-row>
+          
+          <ion-button class="filter" (click)="applyRange()">
+            {{"apply"| translate}}
+          </ion-button>
+        </ion-row>
+      </ion-grid>
+
+
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

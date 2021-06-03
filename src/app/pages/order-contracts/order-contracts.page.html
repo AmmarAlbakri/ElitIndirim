@@ -1,0 +1,40 @@
+<ion-header  no-border>
+  <ion-toolbar   no-border>
+    <ion-buttons slot="start">
+      <ion-back-button class="back-btn" defaultHref="tabs/cart"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{contractType | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <mat-accordion>
+    <ion-list class="contractsList">
+      <ion-card *ngFor="let contract of contracts; let i = index" class="contract-card">
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header (click)="toggle(i)" [ngClass]="{'opened':selectedIndex == i }"
+            collapsedHeight="fit-content" expandedHeight="fit-content" class="panel-header">
+            <!-- <mat-panel-title> -->
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="imageCol">
+                    <img src="{{contract.images[0]?.url}}" />
+                  </ion-col>
+                  <ion-col class="productNameCol">
+                    <ion-label >
+                      {{contract.productName}}
+                    </ion-label>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            <!-- </mat-panel-title> -->
+          </mat-expansion-panel-header>
+            <p *ngIf="contractType == 'preliminary_information_form'" class="infoContent" [innerHtml]="contract.contract1 |safe:''"></p>
+            <p *ngIf="contractType == 'distance_sales_agreement'" class="infoContent" [innerHtml]="contract.contract2 |safe:''"></p>
+        </mat-expansion-panel>
+      </ion-card>
+    </ion-list>
+  </mat-accordion>
+
+
+</ion-content>

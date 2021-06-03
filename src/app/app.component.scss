@@ -1,0 +1,26 @@
+@import '../theme/fonts';
+
+ion-list{
+    margin-bottom: 15px;
+}
+
+hr{
+     background-color:#A4A4A4;
+}
+.profile{
+    margin-left: 10px;
+}
+.menu-div{
+    height: 20%;
+    .hi{
+        position: absolute;
+        left: 5%;
+        top: 15%;
+        .hello{
+            display: inline;
+            color:#A4A4A4;
+        }
+    }
+    
+}
+

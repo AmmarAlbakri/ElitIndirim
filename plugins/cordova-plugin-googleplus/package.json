@@ -1,0 +1,63 @@
+{
+  "_from": "cordova-plugin-googleplus",
+  "_id": "cordova-plugin-googleplus@8.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-H9SJ9sA81bJH14lqi0ZcyraWxz8ZQCgd50c4g90S9nM42eQH6zGOt0NVColxVDWO4CQ4VlLDQ5jVuHpev0ahzQ==",
+  "_location": "/cordova-plugin-googleplus",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-googleplus",
+    "name": "cordova-plugin-googleplus",
+    "escapedName": "cordova-plugin-googleplus",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-googleplus/-/cordova-plugin-googleplus-8.2.0.tgz",
+  "_shasum": "91b91683a22dae72bd6e05299a141feb7be7a8f4",
+  "_spec": "cordova-plugin-googleplus",
+  "_where": "/Users/nourkrimesh/Desktop/ElitIndirim",
+  "bundleDependencies": false,
+  "cordova_name": "Google SignIn",
+  "dependencies": {
+    "q": ""
+  },
+  "deprecated": false,
+  "description": "Use your Google account to authenticate with the app.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "issue": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus/issues",
+  "keywords": [
+    "Google",
+    "Google SignIn",
+    "Google Sign In",
+    "GoogleSignIn",
+    "Google Login",
+    "Google Plus",
+    "Login",
+    "OAuth",
+    "Identity",
+    "Authentication",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-googleplus",
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git",
+  "version": "8.2.0"
+}

@@ -1,0 +1,204 @@
+
+.card-header {
+    background: var(--ion-color-primary);
+    color: var(--ion-color-light);
+    font-weight: 600;
+    text-align: center;
+}
+
+.addrLabel {
+    white-space: normal;
+}
+
+.address-btn {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sameAddressCard {
+    background: unset;
+    box-shadow: unset;
+    .address-checkbox-row {
+        ion-checkbox {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+    .sameAddress-label {
+        padding: 5px;
+    }
+}
+
+.checkout-card {
+    background: unset;
+    box-shadow: unset;
+    
+    .checkout-btn {
+        width: 100%;
+        padding: 2px;
+    }
+}
+
+.order-list {
+    width: 100%;
+    margin: 10px 0 0 0;
+    // background: none;
+}
+.value-row {
+    width: 100%;
+    font-size: 0.8rem;
+    border-bottom: 0.5px solid var(--border-bottom-color);
+    .title-col {
+        font-weight: 600;
+        color: #353535;
+        margin: auto;
+    }
+    .value-col {
+        margin: auto;
+    }
+    .status {
+        font-weight: 600;
+    }
+}
+.totalRow {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.checkbox_row {
+  padding: 10px;
+  flex-wrap: nowrap;
+  line-height: 2;
+  ion-checkbox {
+    // max-width: 30px;
+    // max-height: 30px;
+    width: 2.5rem;
+    height: 1.4rem;
+    &[dir="rtl"] {
+      margin-left: 3px;
+    }
+    &[dir="ltr"] {
+      margin-right: 3px;
+    }
+    // .checkbox-checked {
+    //   background-color: red;
+    // }
+  }
+  .privacy-label {
+    font-size: 0.9em;
+    margin-top: auto;
+    margin-bottom: auto;
+    span {
+      font-weight: 600;
+      // color: var(--ion-color-secondary);
+      text-decoration: underline;
+    }
+  }
+  &[dir="rtl"] {
+    text-align: right !important;
+  }
+  &[dir="ltr"] {
+    text-align: left !important;
+  }
+}
+.privacy-text {
+  color: var(--ion-color-primary);
+}
+.terms-text {
+  color: var(--ion-color-primary);
+  &[dir="rtl"] {
+    padding-left: 0 !important;
+  }
+  &[dir="ltr"] {
+    padding-right: 0 !important;
+  }
+}
+
+
+///AMMAR DESIGN
+
+ion-content {
+  --background: var(--ion-color-background);
+}
+ion-grid {
+  padding: 0;
+}
+ion-list {
+  margin-bottom: 10px;
+}
+.section-col {
+  text-align: center;
+  padding: 10px 0;
+  img {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .section-title {
+    font-size: 0.8rem;
+  }
+}
+
+.des-row {
+  justify-content: left;
+  .des-text {
+    font-size: 0.8em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 15px;
+    padding: 5px 0;
+  }
+}
+.address-row {
+  margin-top: 10px;
+  padding-top: 10px;
+  p {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+}
+.address {
+  --background: var(--ion-color-background);
+}
+.address-item {
+  ion-row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  --background: var(--ion-color-background);
+  ion-label {
+    font-size: 0.8rem;
+  }
+  .address-detail {
+    width: 75%;
+  }
+}
+.check-button {
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: -3px;
+  --size: 15px;
+}
+.check-text {
+  font-size: 0.8rem;
+}
+.toolbar {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  background-color: var(--ion-color-primary);
+  color: white;
+  padding: 7px;
+}
+
+ion-toolbar ion-button {
+  --box-shadow: 0 0 0;
+}
+.w-100{
+  width:100%;
+}
+.addrLabel {
+    white-space: normal;
+}

@@ -1,0 +1,123 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="header-title">
+            <img class="header-img" src="assets/images/headerLogo.png">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="home" id="content" #content>
+    <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+    <!-- AD -->
+    <!-- <ion-row class="ad" *ngIf="!adHidden">
+        <ion-col>
+            <P (click)="goToPage('login')" class="g-text-center">{{"top_ad_text" | translate}}</P>
+        </ion-col>
+        <ion-col size="1">
+            <p class="g-text-center">
+                <ion-icon style="margin-bottom: -3px;" color="white" (click)="hideAd()" name="close" slot="end">
+                </ion-icon>
+            </p>
+        </ion-col>
+    </ion-row> -->
+    <!-- SEARCH BAR -->
+    <!-- <countdown-timer [end]="'2018-01-01 00:00:00'"></countdown-timer> -->
+    <ion-searchbar (search)="search()" [(ngModel)]="input" class="searchbar" [placeholder]="'search' | translate"
+        showCancelButton="never" color="light"></ion-searchbar>
+    <!-- SLIDES -->
+    <span class="home-slides">
+        <ion-slides class="ads-slides" *ngIf="slides" [options]="sliderOpts" pager="true" #slider
+            (ionSlidesDidLoad)="slidesDidLoad(slider)">
+            <ion-slide (click)="goToSearchWithFilter(slide)" *ngFor="let slide of slides">
+                <img src="{{slide.appImages[0].url}}" alt="" class="thumb-img" />
+            </ion-slide>
+        </ion-slides>
+    </span>
+
+    <div *ngIf="!slides" class="slider-skeleton">
+        <ion-skeleton-text animated></ion-skeleton-text>
+    </div>
+
+    <!-- SEGMENT AND SLIDES -->
+    <ion-segment *ngIf="categories && ads" id="seg" scrollable [(ngModel)]="segment" mode="md">
+        <ion-segment-button [value]="i" *ngFor="let c of categories; let i = index" (click)="segmentChange(i)"
+            mode="md">
+            <ion-label>{{c.name}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <ion-row class="values">
+        <ion-col *ngFor="let value of values" class="ion-text-center">
+            <ion-button class="value-button" [ngClass]="{'checked': value.checked == true}" (click)="filter(value)">
+                {{value.value}}%
+            </ion-button>
+        </ion-col>
+    </ion-row>
+
+    <ion-slides *ngIf="categories && ads" id="cats" #cats (ionSlideWillChange)="slideWillChange(cats)"
+        class="category-slides" [options]="categorySlideOpts">
+        <ion-slide *ngFor="let offers of ads; let i = index">
+            <ion-grid>
+                <ion-card class="home-card" *ngFor="let offer of offers?.data ; let i of index" (click)="goToSearchWithFilter(offer)">
+                    <ion-row>
+                        <ion-col  class="ad-photo">
+                            <!-- [ngStyle]="{'background-image': 'url(' + offer?.appImages[0]?.url +')'}" -->
+                            <!-- <div class="brand">
+                                <img class="brand-img" [src]="offer?.brandImages[0]?.url">
+                            </div> -->
+                            <img src="{{offer?.appImages[0]?.url}}" />
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="text-row">
+                        <ion-col class="g-text-left">
+                            <!-- <ion-label>{{offer?.name}}</ion-label> -->
+                            <div>
+                                <p>
+                                    {{offer?.name}}
+                                </p>
+                            </div>
+                        </ion-col>
+
+                        <ion-col class="g-text-right"
+                            *ngIf="offer.limitedDate == true && offer.endDate != '' && offer.endDate != null && offer.endDate != undefined">
+
+                            <!-- {{offer?.endDate}} -->
+                            <countdown-timer (zeroTrigger)="offerEnded(offer)" [end]="offer?.endDate"></countdown-timer>
+                            <!-- <div *ngIf="offer.limitedDate == false" >00:00:00</div> -->
+                            <!-- <div>
+                                <p>
+                                    <span>{{this.hours}}:</span>
+                                    <span>{{this.minutes}}:</span>
+                                    <span class='seconds'>{{this.seconds}}</span>
+                                </p>
+                            </div> -->
+                        </ion-col>
+                    </ion-row>
+                    <!-- <ion-row *ngIf="offer?.limitedDate == true" style="height: 3px;" ></ion-row> -->
+                </ion-card>
+                <!-- <ion-infinite-scroll *ngIf="isDownloadCompleteArr[this.segment] == false" threshold="150px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content>
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+            </ion-grid>
+
+
+
+        </ion-slide>
+    </ion-slides>
+    <div class="ads-skeleton" *ngIf="!categories ||  !ads">
+        <ion-skeleton-text *ngFor="let j of [1,1,1,1]" animated></ion-skeleton-text>
+    </div>
+
+    <ion-infinite-scroll *ngIf="isDownloadCompleteArr[this.segment] == false" threshold="300px"
+        (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content>
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+</ion-content>

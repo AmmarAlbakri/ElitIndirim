@@ -1,0 +1,198 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="this.globals.getActiveTab() == 'cart'" defaultHref="tabs/cart"></ion-back-button>
+      <ion-back-button *ngIf="this.globals.getActiveTab() == 'favorite'" defaultHref="tabs/favorite"></ion-back-button>
+      <ion-back-button *ngIf="this.globals.getActiveTab() != 'cart' && this.globals.getActiveTab() != 'favorite'" defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{"product_detail" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides *ngIf="product" [options]="sliderOpts" class="image-slider" pager="true">
+    <ion-slide>
+      <img [src]="product?.mainImage[0]?.url" (click)="previewImage(product?.mainImage[0]?.url)" class="thumb-img">
+    </ion-slide>
+    <ion-slide *ngFor="let img of product?.images">
+      <img [src]="img?.url" (click)="previewImage(img?.url)" class="thumb-img">
+    </ion-slide>
+    <!-- <ion-slide *ngFor="let opt of product?.options">
+      <img [src]="opt.images[0]?.url" (click)="previewImage(opt.images[0]?.url)" class="thumb-img">
+    </ion-slide> -->
+  </ion-slides>
+
+  <ion-grid class="bg-white">
+    <ion-row class="ion-no-margin">
+      <ion-col size="8">
+        <p class="title">
+          <b>{{product?.name}}</b>
+        </p>
+
+      </ion-col>
+
+      <ion-col class="icon-col" size="4">
+        <ion-icon color="primary" *ngIf="!product?.isInWishList" (click)="favorite(product)" class="favorite"
+          name="heart-empty" size="large"></ion-icon>
+        <ion-icon color="primary" *ngIf="product?.isInWishList" (click)="favorite(product)" class="favorite"
+          name="heart" size="large">
+        </ion-icon>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row *ngIf="product?.discount">
+      <p class="price"><b>{{product?.newPriceFormatted}}</b> <del>{{product?.priceFormatted}}</del></p>
+    </ion-row>
+    <ion-row *ngIf="!product?.discount">
+      <p class="price"><b>{{product?.priceFormatted}}</b></p>
+    </ion-row>
+
+    <ion-row>
+      <ion-col *ngFor="let option of product?.optionsSets; let i = index" size="6">
+        <ion-label class="option-label">{{option?.name}}</ion-label>
+        <ion-select okText="{{'ok' | translate}}" cancelText="{{'cancel' | translate}}" [ngClass]="{'error':optionError}" [(ngModel)]="productOptions[i]"
+          class="select option-col" [value]="option?.values[0]" (ionChange)="optionChanged()">
+          <ion-select-option *ngFor="let value of option?.values" [value]="value">{{value}}</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="notEnoughQnt">
+      <ion-label class="not-enough-text">
+        {{"not_enough_quantity_for_this_product!!" | translate}}
+      </ion-label>
+    </ion-row>
+  </ion-grid>
+
+
+  <!-- <ion-grid class="bg-white" style="padding-bottom: 0;">
+    <ion-row>
+      <ion-col>
+        <p class="date">{{"delivery_date" | translate}}:
+          <br>
+          <span>{{product?.deliveryDate}}</span></p>
+      </ion-col>
+      <ion-col (click)="openSizeTable()">
+        <p class="g-text-right">
+          <ion-icon name="add-circle-outline" style="margin-bottom: -3px"></ion-icon> {{"size_table" | translate}}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+
+  <ion-grid class="bg-white" style="padding-bottom: 0;">
+    <ion-row class="toggle" (click)="toggle(1)">
+      <ion-col>
+        <p>{{"about_product" | translate}}</p>
+      </ion-col>
+      <ion-col>
+        <p style="text-align: right;">
+          <ion-icon [ngClass]="{'opened': toggled1 == true}" name="arrow-dropdown"
+            style="height: 20px; width: 20px; position: relative; top: 2px;fill: var(--ion-color-primary);"></ion-icon>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="toggled1">
+      <div class="productDescription" [innerHtml]="product.description|safe:''"></div>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-grid class="bg-white" style="padding-bottom: 0;">
+    <ion-row class="toggle" (click)="toggle(2)">
+      <ion-col>
+        <p>{{"delivery_and_return" | translate}}</p>
+      </ion-col>
+      <ion-col>
+        <p style="text-align: right;">
+          <ion-icon [ngClass]="{'opened': toggled2 == true}" name="arrow-dropdown"
+            style="height: 20px; width: 20px; position: relative; top: 2px;fill: var(--ion-color-primary);"></ion-icon>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="toggled2">
+      <p style="margin-top:0;font-size: 0.8em; line-height: 1.6;">
+
+      </p>
+    </ion-row>
+  </ion-grid> -->
+
+  <ion-grid class="bg-white" style="padding-bottom: 0;">
+    <ion-row class="center-text" (click)="shareProduct(product?._id)">
+      <p>
+        <ion-icon name="share"
+          style="height: 20px; width: 20px; position: relative; top: 5px;right: 5px;fill: var(--ion-color-primary);">
+        </ion-icon> {{"share" | translate}}
+      </p>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-row class="center-text">
+    <p>{{"you_might_like" | translate}}</p>
+  </ion-row> -->
+
+  <ion-card class="block-card" *ngIf="!noRelated">
+    <ion-card-header class="card-header">
+      <ion-label>
+        {{'you_might_like'|translate}}
+      </ion-label>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row class="horizontal">
+        <ion-col class="cat_cols" size="5" *ngFor="let product of products">
+          <ion-card class="productCard ion-no-margin">
+            <!-- <ion-row> -->
+            <div class="container">
+              <img [src]="product?.mainImage[0].url" (click)="openProduct(product)">
+              <div *ngIf="product?.shipCost" id="shipment" (click)="openProduct(product)">
+                <p>{{"shipment_free" | translate}}</p>
+              </div>
+              <div id="favorite">
+                <ion-icon *ngIf="!product.isInWishList" (click)="favorite(product)" class="favorite" name="heart-empty"
+                  size="large">
+                </ion-icon>
+                <ion-icon *ngIf="product.isInWishList" (click)="favorite(product)" class="favorite" name="heart"
+                  size="large"></ion-icon>
+              </div>
+            </div>
+
+            <!-- <img *ngIf="product?.shipmentCost != 0" [src]="product?.image"> -->
+            <!-- </ion-row> -->
+
+            <!-- <ion-card-header> -->
+            <!-- <p class="title">
+              <b>{{product?.name}}</b>
+            </p> -->
+            <div class="productName" (click)="openProduct(product)">
+              <label [innerHtml]="product?.name"></label>
+            </div>
+            <!-- <p class="sub-title g-grey">
+              {{product?.subtitle}}
+            </p> -->
+            <!-- </ion-card-header> -->
+            <!-- <ion-card-content> -->
+            <ion-row *ngIf="product?.discount" (click)="openProduct(product)">
+              <p class="price"><b>{{product?.newPriceFormatted}}</b> <del>{{product?.priceFormatted}}</del></p>
+            </ion-row>
+            <ion-row *ngIf="!product?.discount" (click)="openProduct(product)">
+              <p class="price ion-text-center" style="width: 100%;"><b>{{product?.priceFormatted}}</b></p>
+            </ion-row>
+            <!-- </ion-card-content> -->
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-row (click)="addoToCart()" class="g-row-center">
+      {{'add_cart' | translate}}
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

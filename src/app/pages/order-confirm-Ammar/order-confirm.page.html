@@ -1,0 +1,210 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/cart"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{"order_confirm" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="stage == 'address'">
+
+  <ion-grid>
+    <!-- <ion-row>
+      <ion-col class="section-col">
+        <ion-row>
+          <img src="../../../assets/icon/current.svg">
+        </ion-row>
+        <ion-row class="g-row-center">
+          <p class="section-title">{{"select_address" | translate}}</p>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="section-col">
+        <ion-row>
+          <img src="../../../assets/icon/2.svg">
+        </ion-row>
+        <ion-row class="g-row-center">
+          <p class="section-title">{{"summery" | translate}}</p>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="section-col">
+        <ion-row>
+          <img src="../../../assets/icon/3.svg">
+        </ion-row>
+        <ion-row class="g-row-center">
+          <p class="section-title">{{"payment" | translate}}</p>
+        </ion-row>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row class="bg-white des-row">
+      <p class="des-text">{{"select_an_address_text" | translate}}</p>
+    </ion-row>
+
+    <ion-row class="bg-white address-row">
+      <ion-row style="margin-left: 10px;">
+        <ion-label><b>{{"delivery_address" | translate}}</b></ion-label>
+        <p>{{"delivery_address_text" | translate}}</p>
+      </ion-row>
+
+      <ion-row style="margin-top: 10px;" class="w-100">
+        <!-- <ion-list radio-group class="w-100">
+          <ion-radio-group mode="md">
+            <ion-item class="address-item w-100" *ngFor="let address of addresses"
+              (click)="setDeliveryAddress(address)">
+              <ion-row class="w-100">
+                <div class="address-detail">
+                  <ion-label>
+                    {{address.fullName}}:
+                  </ion-label>
+                  <ion-label>
+                    {{address.address}} {{address.city}}/{{address.state}}
+                  </ion-label>
+                </div>
+                <ion-radio mode="md"></ion-radio>
+              </ion-row>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list> -->
+        <ion-list lines="full" style="width: 100%;">
+          <ion-radio-group mode="md">
+            <ion-item *ngFor="let address of addresses">
+                <ion-label class="addrLabel">{{address.addressName}} / {{address.state}} / {{address.city}}</ion-label>
+                <ion-radio (click)="setDeliveryAddress(address)" mode="md"></ion-radio>
+            </ion-item>
+            </ion-radio-group>
+        </ion-list>
+      </ion-row>
+
+      <!-- <ion-toolbar > -->
+      <ion-row class="g-row-center toolbar" (click)="goToPage('add-address')">
+        {{'add_address' | translate}}
+      </ion-row>
+      <!-- </ion-toolbar> -->
+
+    </ion-row>
+
+    <ion-row (click)="sameAddressCheck()" class="bg-white" style="margin-top: 10px;">
+      <div style="margin-left: 10px;
+                  margin-top: 5px;
+                  padding-bottom:5px;">
+        <ion-checkbox class="check-button" [checked]="isShippingSameDelivery"></ion-checkbox>
+        <label class="check-text">
+          {{"is_address_same" | translate}}
+        </label>
+      </div>
+    </ion-row>
+
+    <ion-row *ngIf="!isShippingSameDelivery" class="bg-white address-row">
+      <ion-row style="margin-left: 10px;">
+        <ion-label><b>{{"payment_address" | translate}}</b></ion-label>
+        <p>{{"payment_address_text" | translate}}</p>
+      </ion-row>
+
+      <ion-row style="margin-top: 10px;" class="w-100">
+        <!-- <ion-list radio-group class="w-100">
+          <ion-radio-group>
+            <ion-item class="address-item w-100" *ngFor="let address of addresses" (click)="setPaymentAddress(address)">
+              <ion-row class="w-100">
+                <div class="address-detail">
+                  <ion-label>
+                    {{address.fullName}}:
+                  </ion-label>
+                  <ion-label>
+                    {{address.address}} {{address.city}}/{{address.state}}
+                  </ion-label>
+                </div>
+                <ion-radio></ion-radio>
+              </ion-row>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list> -->
+        <ion-list lines="full" style="width: 100%;">
+          <ion-radio-group mode="md">
+            <ion-item *ngFor="let address of addresses">
+                <ion-label class="addrLabel">{{address.addressName}} / {{address.state}} / {{address.city}}</ion-label>
+                <ion-radio (click)="setDeliveryAddress(address)" mode="md"></ion-radio>
+            </ion-item>
+            </ion-radio-group>
+        </ion-list>
+      </ion-row>
+
+      <!-- <ion-toolbar> -->
+      <ion-row (click)="goToPage('add-address')" color="primary" class="g-row-center toolbar">
+        {{'add_address' | translate}}
+      </ion-row>
+      <!-- </ion-toolbar> -->
+
+
+    </ion-row>
+
+
+  </ion-grid>
+
+</ion-content>
+
+<ion-content *ngIf="stage == 'summery'">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="section-col">
+        <ion-row>
+          <!-- <img  src="../../../assets/icon/current.svg"> -->
+          <img src="../../../assets/icon/done.svg">
+        </ion-row>
+        <ion-row class="g-row-center">
+          <p class="section-title">{{"select_address" | translate}}</p>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="section-col">
+        <ion-row>
+          <!-- <img *ngIf="stage == 'address'" src="../../../assets/icon/2.svg"> -->
+          <img src="../../../assets/icon/current.svg">
+        </ion-row>
+        <ion-row class="g-row-center">
+          <p class="section-title">{{"summery" | translate}}</p>
+        </ion-row>
+      </ion-col>
+
+      <ion-col class="section-col">
+        <ion-row>
+          <img src="../../../assets/icon/3.svg">
+          <!-- <img *ngIf="stage == 'payment'" src="../../../assets/icon/current.svg"> -->
+        </ion-row>
+        <ion-row class="g-row-center">
+          <p class="section-title">{{"payment" | translate}}</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="bg-white">
+      <ion-col size="10">
+        <ion-row>
+
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="2">
+
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary" class="g-text-center">
+    <!-- <ion-row class="g-row-center full-width"> -->
+    <ion-button (click)="submit()" [disabled]="!isActive">
+      {{'submit' | translate}}
+    </ion-button>
+    <!-- </ion-row> -->
+  </ion-toolbar>
+</ion-footer>

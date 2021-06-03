@@ -1,0 +1,27 @@
+ion-content{
+    --background: #F5F5F5;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px 20px 0;
+  height: 100%;
+  .form-full{
+    padding-bottom:0;
+    width: 100%;
+  }
+}
+
+.option-label{
+    font-size: 0.8rem;
+    color: var(--ion-color-secondary);
+}
+.select{
+    padding-left: 0;
+    color: #000;
+}
+.text-error{
+  color:red;
+}

@@ -1,0 +1,147 @@
+<ion-header no-border>
+  <ion-toolbar no-border>
+    <ion-buttons slot="start">
+      <ion-back-button class="back-btn" defaultHref="tabs/cart"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{'order_confirm' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+	
+<ion-content #content>
+  <ion-grid *ngIf="addresses && !isFirstStepFinished">
+    <!-- select address Title-->
+    <ion-row class="bg-white des-row">
+      <p class="des-text">{{"select_an_address_text" | translate}}</p>
+    </ion-row>
+    <!-- Shipping Address address -->
+    <ion-row class="bg-white address-row">
+      <ion-row style="margin-left: 10px;">
+        <ion-label><b>{{"delivery_address" | translate}}</b></ion-label>
+        <p>{{"delivery_address_text" | translate}}</p>
+      </ion-row>
+      <ion-row style="margin-top: 10px;" class="w-100">
+      <ion-list lines="full" style="width: 100%;">
+        <ion-radio-group mode="md">
+          <ion-item *ngFor="let address of addresses">
+              <ion-label class="addrLabel">{{address.addressName}} / {{address.state}} / {{address.city}}</ion-label>
+              <ion-radio (click)="setShippingAddress(address)" mode="md"></ion-radio>
+          </ion-item>
+          </ion-radio-group>
+      </ion-list>
+      </ion-row>
+      <ion-row class="g-row-center toolbar" (click)="addNewAddress()">
+        {{'add_address' | translate}}
+      </ion-row>
+    </ion-row>
+    <!-- Same Addresses Checkbox -->
+    <ion-row class="bg-white" style="margin-top: 10px;">
+      <div style="margin-left: 10px;
+                margin-top: 5px;
+                padding-bottom:5px;">
+        <ion-checkbox class="check-button" [(ngModel)]="this.isSameAddressForPayment"></ion-checkbox>
+        <label class="check-text" (click)="sameAddressChecked()">
+        {{"is_address_same" | translate}}
+        </label>
+      </div>
+    </ion-row>
+    <!-- Invoice address -->
+    <ion-row class="bg-white address-row" *ngIf="addresses && !this.isSameAddressForPayment">
+      <ion-row style="margin-left: 10px;">
+        <ion-label><b>{{"payment_address" | translate}}</b></ion-label>
+        <p>{{"payment_address_text" | translate}}</p>
+      </ion-row>
+      <ion-row style="margin-top: 10px;" class="w-100">
+        <ion-list lines="full" style="width: 100%;">
+          <ion-radio-group mode="md">
+            <ion-item *ngFor="let address of addresses">
+              <ion-label class="addrLabel">{{address.addressName}} / {{address.state}} / {{address.city}}</ion-label>
+              <ion-radio (click)="setPaymentAddress(address)" mode="md"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-row>
+      <ion-row (click)="addNewAddress()" color="primary" class="g-row-center toolbar">
+        {{'add_address' | translate}}
+      </ion-row>
+    </ion-row>
+    <!-- Confrm order button -->
+    <ion-card *ngIf="addresses && !isFirstStepFinished" class="checkout-card">
+      <ion-button shadow [disabled]="!addressChoosed" class="checkout-btn" color="primary" (click)="confirmAddresses()">
+        <ion-ripple-effect></ion-ripple-effect>
+        {{'confirm_order' | translate}}
+      </ion-button>
+    </ion-card>
+  </ion-grid>
+
+	<!-- Order details & Pay -->
+	<ion-card dir="{{''|dir}}" *ngIf="isFirstStepFinished">
+        <ion-card-header class="card-header">
+            {{ 'order_summary' | translate }}
+        </ion-card-header>
+        <ion-list class="order-list">
+			<ion-row class="value-row">
+        <ion-col class="title-col">
+          <ion-label>{{ 'products_total' | translate }}:</ion-label>
+        </ion-col>
+        <ion-col class="value-col">
+          <ion-label>{{ totals.subTotal }}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row class="value-row">
+        <ion-col class="title-col">
+          <ion-label>{{ 'shipping_costs' | translate }}:</ion-label>
+        </ion-col>
+        <ion-col class="value-col">
+          <ion-label>{{ totals.shipTotal }}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row class="value-row">
+        <ion-col class="title-col">
+          <ion-label>{{ 'vat_total' | translate }}:</ion-label>
+        </ion-col>
+        <ion-col class="value-col">
+          <ion-label>{{ totals.kdvTotal }}</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row class="value-row totalRow">
+        <ion-col class="title-col">
+          <ion-label>{{ 'total' | translate }}:</ion-label>
+        </ion-col>
+        <ion-col class="value-col">
+          <ion-label>{{ totals.total }}</ion-label>
+        </ion-col>
+      </ion-row>
+		</ion-list>
+      <ion-row class="card-btn-row" >
+          <ion-button class="address-btn" color="secondary" dir="{{''|dir}}" (click)="editSelectedAddresses()">
+              <ion-icon name="create"></ion-icon>
+              {{ 'edit_addresses'|translate }}
+          </ion-button>
+      </ion-row>
+    </ion-card>
+    <!-- agree contracts-->
+    <!-- <ion-card dir="{{''|dir}}" > -->
+      <ion-row  dir="{{''|dir}}" class="checkbox_row" *ngIf="isFirstStepFinished">
+		  	<ion-checkbox dir="{{''|dir}}" color="primary" [(ngModel)]="this.agreedToContracts"></ion-checkbox>
+		  	<ion-label class="privacy-label" dir="{{''|dir}}" >
+		  		<span style="text-decoration: none;" (click)="agreeToContractsClicked()">{{'read_and_accept'|translate}}</span>
+		  		<span class="privacy-text" dir="{{''|dir}}" (click)="goToPage('order-contracts', 'preliminary_information_form')">
+		  			<strong>{{'preliminary_information_form'|translate}}</strong>
+		  		</span>
+		  		<strong (click)="agreeToContractsClicked()"> {{'&'|translate}} </strong>
+		  		<span class="terms-text" dir="{{''|dir}}" (click)="goToPage('order-contracts', 'distance_sales_agreement')">
+		  			<strong>{{'distance_sales_agreement'|translate}}</strong>
+		  		</span>
+		  	</ion-label>
+      </ion-row>
+    <!-- </ion-card> -->
+
+    <!-- Confrm order button -->
+    <ion-card *ngIf="isFirstStepFinished" class="checkout-card">
+      <ion-button shadow [disabled]="!agreedToContracts" class="checkout-btn" color="primary" (click)="pay()">
+        <ion-ripple-effect></ion-ripple-effect>
+        <!-- <ion-icon color="light" slot="icon-only" name="paper-plane"></ion-icon> -->
+        {{'pay' | translate}}
+      </ion-button>
+    </ion-card>
+</ion-content>

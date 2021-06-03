@@ -1,0 +1,84 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{"return_submit" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form class="form">
+    <label [ngClass]="{'error': isRecievedError}"
+      id="radio-group-label">{{"did_you_recieve_the_order" | translate}}</label>
+    <mat-radio-group required aria-labelledby="radio-group-label" class="radio-group" [(ngModel)]="isRecieved"
+      (change)="recivedChanged()" [ngModelOptions]="{standalone: true}">
+      <ion-row>
+        <ion-col style="margin-left:-5px" size="6" *ngFor="let option of options">
+          <mat-radio-button required 
+            class="radio-button" [value]="option">
+            {{ option | translate}}
+          </mat-radio-button>
+        </ion-col>
+      </ion-row>
+    </mat-radio-group>
+
+    <mat-form-field class="form-full">
+      <textarea matInput required placeholder="{{'user_note' | translate}}" [formControl]="message"
+        (focusout)="checkMessage()">
+          </textarea>
+      <mat-error *ngIf="messageError">
+        {{"message_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input matInput placeholder="{{'refund_reason' | translate}}" [formControl]="reason">
+      <mat-error *ngIf="reasonError">
+        {{"reasonError" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <label [ngClass]="{'error': isUsedError}" id="radio-group-label"
+      *ngIf="isRecieved == 'yes'">{{"did_you_use_the_order" | translate}}</label>
+    <mat-radio-group *ngIf="isRecieved == 'yes'" required aria-labelledby="radio-group-label" class="radio-group"
+      [(ngModel)]="isUsed" [ngModelOptions]="{standalone: true}" (change)="usedChanged()">
+      <ion-row>
+        <ion-col style="margin-left:-5px" size="6" *ngFor="let option of options">
+          <mat-radio-button required
+            class="radio-button" [value]="option">
+            {{ option | translate}}
+          </mat-radio-button>
+        </ion-col>
+      </ion-row>
+    </mat-radio-group>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <img *ngIf="choosedImage.length == 0" src="assets/images/addImg.png" (click)="addPhotoAlert()" />
+          <img *ngIf="choosedImage.length >= 1" [src]="choosedImage[0]?.path | safe:'html'" />
+          <ion-button *ngIf="choosedImage.length >= 1" class="removeImg-btn" no-margins no-padding
+            (click)="deleteImage(choosedImage[0], 0)">
+            <ion-icon name="remove"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+
+  </form>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-row (click)="sendRequest()" class="g-row-center">
+      {{'send_order' | translate}}
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

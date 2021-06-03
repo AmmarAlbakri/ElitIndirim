@@ -1,0 +1,26 @@
+
+.contractsList {
+    background: unset;
+}
+
+.contract-card {
+    background: #fff;
+}
+
+.panel-header{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.imageCol {
+    width: 50%;
+}
+.productNameCol {
+    margin: auto;
+}
+.mat-expansion-panel-body {
+    padding: 5px !important;
+}
+::ng-deep .mat-expansion-panel-body {
+    padding: 5px !important;
+}

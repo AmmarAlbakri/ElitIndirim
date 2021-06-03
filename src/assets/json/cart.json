@@ -1,0 +1,41 @@
+[
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": true,
+        "isLimited": true,
+        "piece": 7,
+        "timeLeft": "2 day 14 hours",
+        "shipmentcost": 0,
+        "options": [
+            {
+                "name": "size",
+                "value": 34
+            }
+        ]
+    },
+    {
+        "image": "../../../assets/images/p2.png",
+        "title": "H&M Shopping",
+        "subtitle": "elbise kadin",
+        "piece": 1,
+        "hasDiscount": true,
+        "options": [
+            {
+                "name": "color",
+                "value": "black"
+            },
+            {
+                "name": "size",
+                "value": 34
+            }
+        ],
+        "price": "700TL",
+        "priceAfterDiscount": "570TL",
+        "timeLeft": "7:34",
+        "isLimited": false
+    }
+]

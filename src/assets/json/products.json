@@ -1,0 +1,106 @@
+[
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": true,
+        "isLimited": true,
+        "timeLeft": "2 day 14 hours",
+        "shipmentcost": 0,
+        "isInWishList": true
+    },
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": true,
+        "isLimited": true,
+        "timeLeft": "2 day 14 hours",
+        "shipmentCost": 12,
+        "isInWishList": false
+    },
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": true,
+        "isLimited": true,
+        "timeLeft": "2 day 14 hours",
+        "shipmentCost": 0,
+        "isInWishList": true
+    },
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": false,
+        "isLimited": true,
+        "timeLeft": "2 day 14 hours",
+        "isInWishList": false
+    },
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": true,
+        "isLimited": true,
+        "timeLeft": "2 day 14 hours",
+        "isInWishList": true
+    },
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": true,
+        "isLimited": false,
+        "timeLeft": "2 day 14 hours",
+        "isInWishList": false
+    },
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": true,
+        "isLimited": true,
+        "timeLeft": "2 day 14 hours",
+        "isInWishList": true
+    },
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": true,
+        "isLimited": true,
+        "timeLeft": "2 day 14 hours",
+        "shipmentCost": 10,
+        "isInWishList": true
+    },
+    {
+        "title": "H&M Shopping",
+        "subtitle": "Kadin Elbise",
+        "image": "../../../assets/images/p1.png",
+        "priceAfterDiscount": "700TL",
+        "price": "1400TL",
+        "hasDiscount": false,
+        "isLimited": false,
+        "timeLeft": "2 day 14 hours",
+        "shipmentCost": 0,
+        "isInWishList": false
+    }
+]

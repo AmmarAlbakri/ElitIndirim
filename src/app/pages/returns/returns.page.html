@@ -1,0 +1,69 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{'my_returns' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item style="margin-top:10px;" *ngIf="noItem" class="g-text-center">
+    <ion-grid style="padding-top:10px;">
+      <ion-row class="g-row-center">
+        <ion-icon color="primary" size="large" name="return-left"></ion-icon>
+      </ion-row>
+      <ion-row class="g-row-center">
+        <p>
+          {{"return_orders_empty" | translate}}
+        </p>
+      </ion-row>
+      <ion-row (click)="goToPage('tabs/home')" class="g-row-center">
+        <ion-button style="width: 80%; margin-bottom:10px;">
+          {{'start_shopping' | translate}}
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+  <ion-grid *ngIf="orders">
+    <ion-row class="order-row bg-white" *ngFor="let order of orders" (click)="openOrder(order)">
+      <ion-col size="4">
+        <ion-thumbnail class="thumbnail full-height">
+          <img [src]="order?.order.product?.images[0]?.url">
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col class="info-col" size="8">
+        <ion-row>
+          <p class="left-side">{{"product_name" | translate}}:&nbsp;</p>
+          <p> {{order?.order?.product?.name}}</p>
+        </ion-row>
+        <ion-row>
+          <p class="left-side">{{"date" | translate}}:&nbsp;</p>
+          <p> {{ order?.createdAt | date:'dd/MM/yy hh:mm a' }}</p>
+        </ion-row>
+        <ion-row>
+          <p class="left-side">{{"status" | translate}}:&nbsp;</p>
+          <p>{{order?.order?.lastNote}}</p>
+        </ion-row>
+        <ion-row>
+          <p class="left-side price">{{"total" | translate}}:&nbsp;</p>
+          <p class="price"> {{order?.order?.totalFormatted}}</p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="order-skeleton" *ngIf="!orders">
+    <ion-skeleton-text *ngFor="let j of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]" animated></ion-skeleton-text>
+  </div>
+
+  <ion-infinite-scroll *ngIf="orders && isDownloadComplete == false" threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

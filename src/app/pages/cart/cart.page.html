@@ -1,0 +1,159 @@
+<ion-header no-border>
+    <ion-toolbar text-center>
+        <ion-buttons slot="start">
+            <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="cart-title">
+            {{'cart' | translate}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item style="margin-top:10px;" *ngIf="noItems && products" class="g-text-center">
+        <ion-grid style="padding-top:10px;">
+            <ion-row class="g-row-center">
+                <ion-icon color="primary" size="large" name="cart"></ion-icon>
+            </ion-row>
+
+            <ion-row class="g-row-center">
+                <p>
+                    {{"cart_empty" | translate}}
+                </p>
+            </ion-row>
+
+            <ion-row (click)="goToPage('tabs/home')" class="g-row-center">
+                <ion-button style="width: 80%;">
+                    {{'start_shopping' | translate}}
+                </ion-button>
+            </ion-row>
+        </ion-grid>
+    </ion-item>
+
+    <ion-list lines="full" *ngIf="products">
+        <ion-item-sliding class="cart-item" *ngFor="let p of products; let i of index">
+            <!-- <ion-item-options side="start">
+                <ion-item-option (click)="deleteProduct(p)">
+                    <ion-icon slot="icon-only" name="trash"></ion-icon>
+                </ion-item-option>
+            </ion-item-options> -->
+            <!-- <ion-item-options side="end">
+                <ion-item-option (click)="deleteProduct(p)">
+                    <ion-icon slot="icon-only" name="trash"></ion-icon>
+                </ion-item-option>
+            </ion-item-options> -->
+            <ion-item no-padding>
+                <ion-grid class="full-height">
+                    <ion-row>
+                        <ion-col (click)="openProduct(p)" class="image-col" size="3">
+                            <ion-thumbnail class="thumbnail full-height">
+                                <img [src]="p.images[0].url">
+                            </ion-thumbnail>
+                        </ion-col>
+                        <ion-col size="9">
+                            <ion-row class="g-full-height">
+                                <ion-col>
+                                    <p class="title"><b>{{p.name}}</b></p>
+                                    <!-- <p class="g-grey subtitle">{{p.subtitle}}</p> -->
+                                    <span *ngIf="p.selectedOption != null || p.selectedOption != undefined">
+                                        <p *ngIf="p.selectedOption.option1">
+                                            {{p.selectedOption.option1}}:
+                                            {{p.selectedOption.value1}}
+                                        </p>
+                                        <p *ngIf="p.selectedOption.option2">
+                                            {{p.selectedOption.option2}}:
+                                            {{p.selectedOption.value2}}
+                                        </p>
+                                        <p *ngIf="p.selectedOption.option3">
+                                            {{p.selectedOption.option3}}:
+                                            {{p.selectedOption.value3}}
+                                        </p>
+                                    </span>
+
+                                    <ion-row>
+                                        <ion-col size="6" no-padding>
+                                            <p>{{"piece" | translate}}:&nbsp;</p>
+                                        </ion-col>
+                                        <ion-col size="6" no-padding>
+                                            <ion-select class="select" interface="action-sheet" [(ngModel)]="p.quantity"
+                                                (ionChange)="quntityChange(p)">
+                                                <ion-select-option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" [value]="i">
+                                                    &nbsp;{{i}}
+                                                </ion-select-option>
+                                            </ion-select>
+                                        </ion-col>
+                                    </ion-row>
+
+                                </ion-col>
+                                <!-- <ion-col *ngIf="p.descountPercent != 0">
+                                    <p class="g-text-right price red"><b>{{p.totalFormatted}}</b></p>
+                                    <p class="g-text-right oldPrice"><del>{{p.priceFormatted}}</del></p>
+                                    <p class="g-text-right" [ngClass]="{'zero-value': p.totalShipCost == 0}">
+                                        {{"ship_cost" | translate}}:{{p.totalShipCostFormatted}}</p>
+                                    <p *ngIf="p.isLimited" class="time-text">
+                                        <ion-icon name="time" slot="start"></ion-icon> {{p.timeLeft}}
+                                    </p>
+                                </ion-col> -->
+                                <ion-col>
+                                    <p class="g-text-right price">
+                                        {{p.quantity}} x {{p.subTotal/p.quantity}} =
+                                        <b>{{p.subTotalFormatted}}</b>
+                                    </p>
+                                    <p class="g-text-right" [ngClass]="{'zero-value': p.totalShipCost == 0}">
+                                        {{"ship_cost" | translate}}:{{p.totalShipCostFormatted}}</p>
+                                </ion-col>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+
+            </ion-item>
+            <ion-item-options side="end">
+                <ion-item-option (click)="deleteProduct(p)">
+                    <ion-icon slot="icon-only" name="trash"></ion-icon>
+                </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+    <div class="cart-skeleton" *ngIf="!products">
+        <ion-skeleton-text *ngFor="let j of [1,1,1]" animated></ion-skeleton-text>
+    </div>
+
+</ion-content>
+<ion-footer *ngIf="products && !noItems" class="footer bg-white">
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col>
+                <ion-label>{{"sub_total" | translate}}</ion-label>
+            </ion-col>
+            <ion-col class="value">
+                <ion-label>{{total.subTotalFormatted}}</ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-label>{{"shipment_cost" | translate}}</ion-label>
+            </ion-col>
+            <ion-col class="value">
+                <ion-label>{{total.shipFormatted}}</ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-label class="total"><b>{{"total" | translate}}</b></ion-label>
+            </ion-col>
+            <ion-col class="value ">
+                <ion-label class="total"><b class="color-pri">{{total.totalFormatted}}</b> </ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-toolbar color="primary">
+        <ion-row (click)="sendOrder()" class="g-row-center">
+            {{'send_order' | translate}}
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>

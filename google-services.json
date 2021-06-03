@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "97311029954",
+    "firebase_url": "https://trendyol-257008.firebaseio.com",
+    "project_id": "trendyol-257008",
+    "storage_bucket": "trendyol-257008.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97311029954:android:0aebf2b12592dced8cd95b",
+        "android_client_info": {
+          "package_name": "net.zerofs.elitindirim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97311029954-o9poqcilkrln8j4in4h8rfeceankj6fl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.zerofs.elitindirim",
+            "certificate_hash": "60bddf39bf58eaa3a9119a0051d2b8b7a0261619"
+          }
+        },
+        {
+          "client_id": "97311029954-5n7dgdl8kkvgilo15atsnrdbcj46n1lh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGKS1qBdlutgTM-XsmamkvDdWtBFNUlL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97311029954-5n7dgdl8kkvgilo15atsnrdbcj46n1lh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "97311029954-9jkvfbap9egq7krgq1pa062isvm5pm0r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "net.zerofs.elitindirim"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

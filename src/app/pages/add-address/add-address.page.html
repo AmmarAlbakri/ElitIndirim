@@ -1,0 +1,91 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{"add_address" | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form bg-white">
+
+    <mat-form-field class="form-full">
+      <input matInput required placeholder="{{'address_header' | translate}}" [formControl]="header"
+        (focusout)="checkHeader()">
+      <mat-error *ngIf=" header.hasError('required' ) || headerError">
+        {{"header_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input matInput required placeholder="{{'full_name' | translate}}" [formControl]="fullName"
+        (focusout)="checkFullName()">
+      <mat-error *ngIf=" fullName.hasError('required' ) || fullNameError">
+        {{"full_name_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="form-full">
+      <textarea matInput required placeholder="{{'address' | translate}}" rows="5" [formControl]="address"
+        (focusout)="checkAddress()"></textarea>
+      <mat-error *ngIf=" address.hasError('required' ) || addressError">
+        {{"address_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <!-- <mat-form-field class="form-full"> -->
+    <ion-label [ngClass]="{'text-error':cityError}" class="option-label">{{"city" |translate}}</ion-label>
+    <ion-select class="select" (ionChange)="cityChanged($event)" [value]="city"
+      placeholder="{{'select_city' | translate}}" okText="{{'ok' | translate}}" cancelText="{{'cancel' | translate}}">
+      <ion-select-option *ngFor="let value of cities" [value]="value.name">{{value.name}}
+      </ion-select-option>
+    </ion-select>
+    <!-- </mat-form-field> -->
+
+    <!-- <mat-form-field class="form-full"> -->
+    <ion-label *ngIf="city" [ngClass]="{'text-error':subLocaltyError}" class="option-label">{{"sub_localty" |translate}}</ion-label>
+    <ion-select *ngIf="city" class="select" (ionChange)="subLocaltyChanged($event)" [value]="subLocalty"
+      placeholder="{{'select_sublocalty' | translate}}" okText="{{'ok' | translate}}" cancelText="{{'cancel' | translate}}">
+      <ion-select-option *ngFor="let value of subLocalties" [value]="value">{{value}}</ion-select-option>
+    </ion-select>
+    <!-- </mat-form-field> -->
+
+    <mat-form-field class="form-full">
+      <input matInput required placeholder="{{'postal_code' | translate}}" [formControl]="postal"
+        (focusout)="checkPostal()">
+      <mat-error *ngIf=" postal.hasError('required' ) || postalError">
+        {{"postal_code_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input type="number" matInput required placeholder="{{ 'phone' | translate}}" [formControl]="phone"
+        (focusout)="checkPhone()">
+      <mat-error *ngIf="(phone.invalid)">
+        {{"phone_error"| translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input matInput required placeholder="{{'passport' | translate}}" [formControl]="passport"
+        (focusout)="checkPassport()">
+      <mat-error *ngIf=" passport.invalid || passportError">
+        {{"passport_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar (click)="checkAll()" color="primary">
+    <ion-row class="g-row-center full-width">
+      {{'submit' | translate}}
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

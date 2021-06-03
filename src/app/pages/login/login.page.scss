@@ -1,0 +1,52 @@
+ion-content {
+  --background: #f5f5f5;
+}
+
+.form {
+  min-width: 150px;
+  // max-width: 500px;
+  width: 100%;
+  padding: 20px 20px 0;
+  margin: 0 0 20px;
+  .form-full {
+    padding-bottom: 0;
+    width: 100%;
+  }
+}
+
+.forgot {
+  color: var(--ion-color-primary);
+  text-align: end;
+  font-size: 0.8rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.check-text {
+  font-size: 0.8rem;
+}
+
+.signup-btn,
+.login-btn {
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  margin: 10px auto 20px;
+  width: calc(100% - 20px);
+  border-radius: 6px;
+}
+
+.signup-btn {
+  color: var(--ion-color-primary);
+}
+.facebook-btn {
+  // --background: var(--facebook);
+  width: 100%;
+  padding: 0 10px;
+  .logo-social {
+    margin: 0 5px;
+  }
+}
+
+.activated {
+
+}

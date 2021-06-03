@@ -1,0 +1,7 @@
+{
+  "name": "ElitIndirim",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

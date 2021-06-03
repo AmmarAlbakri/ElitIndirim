@@ -1,0 +1,26 @@
+<ion-tabs>
+
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="home" (click)="this.globalsService.setActiveTab('home')">
+            <ion-icon name="home"></ion-icon>
+            <ion-label>{{"home" | translate}}</ion-label>
+        </ion-tab-button>
+        <!-- (click)="goToPage('cart')" -->
+        <ion-tab-button tab="cart" (click)="this.globalsService.setActiveTab('cart')">
+            <ion-icon name="cart"></ion-icon>
+            <ion-label>{{"cart" | translate}}</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="favorite" (click)="this.globalsService.setActiveTab('favorite')">
+            <ion-icon name="heart"></ion-icon>
+            <ion-label>{{"favorite" | translate}}</ion-label>
+        </ion-tab-button>
+
+
+        <ion-tab-button tab="profile" (click)="this.globalsService.setActiveTab('profile')">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>{{"account" | translate}}</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+
+</ion-tabs>

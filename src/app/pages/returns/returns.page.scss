@@ -1,0 +1,47 @@
+ion-content {
+  --background: var(--ion-color-background);
+}
+
+ion-grid {
+  margin-top: 10px;
+  padding: 0;
+  ion-col {
+    padding: 0;
+    padding-right: 10px;
+  }
+  p {
+    margin: 0 0 5px;
+    font-size: 0.8em;
+  }
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+}
+.left-side {
+  font-weight: bold;
+  color: #000;
+}
+.price {
+  color: var(--ion-color-primary);
+}
+.info-col {
+    margin-top: 10px;
+}
+.order-row {
+  border-bottom: 1px solid var(--ion-color-light-tint);
+}
+.order-skeleton{
+  ion-skeleton-text{
+    margin: 10px;
+    width: 100%;
+    height: 150px;
+    margin-left: 0;
+  }
+}
+.return-btn{
+    margin-left: auto;
+    margin-right: 8px;
+    margin-bottom: 10px;
+}

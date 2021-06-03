@@ -1,0 +1,84 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{"login" | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+
+
+  <form class="form bg-white">
+    <mat-form-field class="form-full">
+      <input matInput required placeholder="{{ 'email' | translate}}" type="email" [formControl]="email" (focusout)="checkEmail()">
+      <mat-error *ngIf=" email.hasError('required' ) || emailError">
+        {{"email_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input #passInput type="password" matInput required placeholder="{{ 'password' | translate}}"
+        [formControl]="password" (focusout)="checkPassword()">
+      <mat-error *ngIf="password.hasError('required') || passwordError">
+        {{"password_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <ion-row style="margin-top: -10px">
+      <ion-col>
+        <mat-checkbox (click)="changePassType(passInput)" [checked]="true">
+          <p class="check-text">
+            {{"hide_password" | translate}}
+          </p>
+        </mat-checkbox>
+      </ion-col>
+
+      <ion-col class="forgot" (click)="forgotPassword()">
+        <p>
+          {{"forgot_password" | translate}}
+        </p>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+
+  <ion-toolbar class="login-btn" (click)="login()" color="primary">
+    <ion-row class="g-row-center full-width submit">
+      {{'login' | translate}}
+    </ion-row>
+  </ion-toolbar>
+
+  <ion-toolbar class="signup-btn" [routerLink]="'../signup'">
+    <ion-row class="g-row-center full-width">
+      {{'signup' | translate}}
+    </ion-row>
+  </ion-toolbar>
+  <ion-row style="width: 100%;">
+    <ion-col size="5" style="margin: auto; padding: 0;"><hr style="background: #707070;"></ion-col>
+    <ion-col size="2" style="text-align: center;">{{'veya' | translate}}</ion-col>
+    <ion-col size="5" style="margin: auto; padding: 0;"><hr style="background: #707070;"></ion-col>
+  </ion-row>
+  <ion-row class="g-row-center full-width">
+    <ion-col>
+      <ion-button class="facebook-btn" color="tertiary" (click)="facebookLogin()">
+        <ion-icon class="logo-social" name="logo-facebook"></ion-icon>
+         {{'facebook_login' | translate}}
+      </ion-button>
+    </ion-col>
+    <ion-col [hidden]="hideGoogle">
+      <ion-button class="facebook-btn" color="primary" (click)="googleLogin()">
+        <ion-icon class="logo-social" name="logo-google"></ion-icon>
+         {{'google_login' | translate}}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  
+
+</ion-content>

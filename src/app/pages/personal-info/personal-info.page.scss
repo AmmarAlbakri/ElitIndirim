@@ -1,0 +1,45 @@
+ion-content{
+  font-family: var(--ion-font-family) !important;
+}
+
+
+ion-content{
+  --background: var(--ion-color-background);
+  margin-top: 10px;
+}
+
+
+.form {
+  margin-top:10px;  
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 0 20px;
+  .form-full{
+    padding-bottom:0;
+    width: 100%;
+  }
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin:  0;
+  ion-col{
+    padding:0;
+  }
+}
+
+.radio-button {
+  margin: 5px;
+}
+
+.submit{
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  margin: 10px auto 20px;
+  width: calc(100% - 20px);
+  border-radius: 6px;
+}

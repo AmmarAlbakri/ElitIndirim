@@ -1,0 +1,76 @@
+.modal-title {
+  font-size: 0.8rem;
+}
+
+.modal-subtitle {
+  font-size: 0.6rem;
+  margin: 0;
+}
+
+.normal-size {
+  font-size: 1rem;
+}
+
+.small-size {
+  font-size: 0.7rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+ion-list {
+  padding: 5px;
+}
+.toggle {
+  --background-checked: var(--ion-color-primary);
+}
+
+.searchbar {
+  width: 100%;
+  margin: auto;
+  background-color: var(--ion-color-primary);
+  background-image: url(/assets/images/pattren.jpg);
+  background-size: 100%;
+  padding: 10px 20px;
+  background-position: 0px -75px;
+  border: 0;
+  box-shadow: 0 0 0;
+  background-repeat: no-repeat;
+}
+.filter {
+  background-color: var(--ion-color-primary);
+  text-align: center;
+  color: white;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  margin: 10px auto 10px;
+  width: calc(100% - 20px);
+  box-shadow: 0px 0px 6px rgba(45, 45, 45, 0.2);
+  border-radius: 6px;
+}
+
+ion-item:last-child {
+  --border-width: 0;
+}
+
+ion-slides{
+  height: 100%;
+}
+.full-slide{
+    height: 100%;
+    width: 100%;
+    margin-top: auto;
+}
+.range-grid{
+  height: 100%;
+    padding: 20px;
+}
+.selected-text{
+  color:var(--ion-color-primary);
+}
+.input{
+  text-align: center;
+  border: 0.5px solid grey;
+}

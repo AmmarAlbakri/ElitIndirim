@@ -1,0 +1,69 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "2380873778829700",
+      "APP_NAME": "ElitIndirim",
+      "FACEBOOK_HYBRID_APP_EVENTS": "false",
+      "FACEBOOK_ANDROID_SDK_VERSION": "5.5.2",
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-filepath": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-googleplus": {
+      "PLAY_SERVICES_VERSION": "15.0.1",
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    },
+    "mx.ferreyra.callnumber": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "net.zerofs.elitindirim"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+ion-content {
+    // --background: var(--ion-color-background);
+}
+.infoCard {
+    margin: 0;
+    border-radius: 0;
+    // background: #f5f5f5;
+    box-shadow: unset;
+    .infoContentDiv {
+        padding: 10px;
+        background: #fff;
+    }
+}

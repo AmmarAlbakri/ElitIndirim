@@ -1,0 +1,82 @@
+
+.header-title {
+    .header-img {
+        max-width: 40%;
+        padding-top: 5px;
+    }
+}
+ion-content {
+  --background: #f5f5f5;
+}
+.hello {
+  color: #ffffff;
+  background-image: url(/assets/images/pattren.jpg);
+  background-size: 100%;
+  background-position: 0px -75px;
+  background-position-x: 0px;
+  background-repeat: no-repeat;
+  display: table;
+  width: 100%;
+  font-weight: 100;
+  padding: 20px 0;
+}
+.hello p {
+  margin: 0;
+}
+.hello p span {
+  font-weight: bold;
+}
+.middle-row {
+  margin: 10px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 6px rgba(45, 45, 45, 0.2);
+  ion-col {
+    // padding-top: 10px;
+    // padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    ion-icon {
+      margin: 0;
+    }
+  }
+}
+ion-list {
+  margin: 10px;
+  padding: 0;
+  border-radius: 6px;
+  box-shadow: 0px 0px 6px rgba(45, 45, 45, 0.2);
+}
+
+ion-item:last-child {
+  --border-width: 0;
+}
+
+ion-icon {
+  margin: 0 15px 0 0;
+  color: var(--ion-color-primary);
+}
+
+.logout-btn {
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  margin: 10px auto 20px;
+  width: calc(100% - 20px);
+  border-radius: 6px;
+}
+
+.logout-btn p {
+  font-size: 0.9em;
+  margin: -6px 0 0px;
+}
+
+.logout-btn ion-icon {
+  color: #fff;
+  font-size: 1.4em;
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}

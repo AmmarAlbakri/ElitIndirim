@@ -1,0 +1,133 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{"signup" | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form" (ngSubmit)="onSubmit()">
+    <mat-form-field [ngClass]="{'no-error':firstNameError == false, error:firstNameError == true}" class="form-full">
+      <input matInput required placeholder="{{'first_name' | translate}}" [formControl]="firstName"
+        (focusout)="checkFirstName()">
+      <mat-error *ngIf=" firstName.hasError('required' ) || firstNameError">
+        {{"first_name_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input matInput required placeholder="{{'last_name' | translate}}" [formControl]="lastName"
+        (focusout)="checkLastName()">
+      <mat-error *ngIf="lastName.hasError('required') || lastNameError">
+        {{"last_name_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input matInput required placeholder="{{'email' | translate}}" [formControl]="email" (focusout)="checkEmail()">
+      <mat-error *ngIf="email.invalid && email.hasError('required') || emailError">
+        {{"email_required" | translate}}
+      </mat-error>
+      <mat-error *ngIf="email.invalid && email.hasError('email')">
+        {{"email_error" | translate  }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input type="password" matInput required placeholder="{{'password' | translate}}" [formControl]="password"
+        (focusout)="checkPassword()">
+      <mat-error *ngIf="(password.invalid && password.hasError('required')) || passwordError">
+        {{"password_error" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-full">
+      <input type="password" matInput required placeholder="{{ 'confirm' | translate}}" [formControl]="confirmPassword"
+        pattern="{{password.value}}" (focusout)="checkConfirmPassword()">
+      <mat-error *ngIf="(confirmPassword.invalid && confirmPassword.hasError('required'))">
+        {{"confirm_password_error" | translate}}
+      </mat-error>
+      <mat-error *ngIf="confirmPassword.hasError('pattern')">
+        {{"do_not_match" | translate}}
+      </mat-error>
+    </mat-form-field>
+
+    <!-- <label id="radio-group-label">{{"gender" | translate}}</label>
+    <mat-radio-group required aria-labelledby="radio-group-label" class="radio-group" [formControl]="gender">
+      <ion-row>
+        <ion-col style="margin-left:-5px" size="6" *ngFor="let option of genders">
+          <mat-radio-button required [ngClass]="{'no-error':genderError == false, error:genderError == true}"
+            class="radio-button" [value]="option">
+            {{ option | translate}}
+          </mat-radio-button>
+        </ion-col>
+      </ion-row>
+    </mat-radio-group> -->
+
+    <!-- <mat-form-field class="form-full">
+      <input matInput required [matDatepicker]="picker" placeholder="{{ 'birth_date' | translate}}"
+        [formControl]="birthDate" (focusout)="checkBirthDate()">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="birthDate.hasError('required') ">
+        {{"date_error"| translate}}
+      </mat-error>
+    </!-->
+
+    <mat-form-field class="form-full">
+      <input type="number" matInput required placeholder="{{ 'phone' | translate}}" [formControl]="phone"
+        (focusout)="checkPhone()">
+      <!-- <span matPrefix>05</span> -->
+      <!-- pattern="[0-9]{11}" -->
+
+      <mat-error *ngIf="(phone.invalid)">
+        {{"phone_error"| translate}}
+      </mat-error>
+    </mat-form-field>
+
+
+
+    <ion-row class="check-row">
+      <ion-col size="1">
+        <mat-checkbox [(ngModel)]="isFirstChecked" [ngModelOptions]="{standalone:true}"
+          (focusout)="checkIsFirsthecked()"
+          [ngClass]="{'no-error':isfirstCheckedError == false, error:isfirstCheckedError == true}">
+        </mat-checkbox>
+      </ion-col>
+      <ion-col>
+        <ion-label  [ngClass]="{'error': isfirstCheckedError}">
+          <a class="link" (click)="openInfo('privacy')">
+            {{"privacy_t" | translate}}
+          </a>
+          {{"&" | translate}}
+          <a class="link" (click)="openInfo('terms')">
+            {{"terms_t" | translate}}
+          </a>
+          {{"read_and_agreed" | translate}}
+        </ion-label>
+      </ion-col>
+
+
+    </ion-row>
+
+    <!-- <ion-row class="check-row">
+      <mat-checkbox [(ngModel)]="isSeconedChecked" [ngModelOptions]="{standalone:true}">
+        <p>{{"promotions_agreement" | translate}}</p>
+      </mat-checkbox>
+    </ion-row> -->
+
+  </form>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar (click)="checkAll()" color="primary">
+    <ion-row class="g-row-center full-width">
+      {{'signup' | translate}}
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,112 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="filter.searchWord">{{ filter.searchWord }}</ion-title>
+    <ion-title *ngIf="!filter.searchWord">{{ "search_products" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-row class="ad" *ngIf="!adHidden">
+    <ion-col>
+      <P (click)="goToPage('profile')" class="g-text-center">{{"top_ad_text" | translate}}</P>
+    </ion-col>
+    <ion-col size="1">
+      <p class="g-text-center">
+        <ion-icon style="margin-bottom: -3px;" color="white" (click)="hideAd()" name="close" slot="end">
+        </ion-icon>
+      </p>
+    </ion-col>
+  </ion-row> -->
+
+  <ion-grid>
+    <ion-row class="g-row-center bg-white">
+      <ion-col (click)="openFilter()" class="g-col-center filter">
+        <p class="g-text-center small-margin" [ngClass]="{'has-filter': hasFilter == true}">
+          <img src="../../../assets/icon/filter(1).png" alt=""/>
+          {{"filter" | translate}}
+        </p>
+      </ion-col>
+
+      <!-- <ion-col (click)="openSort()" class="sort">
+        <p class="g-text-center small-margin">
+          <img src="../../../assets/icon/sort(1).png">
+          {{"sort" | translate}}
+        </p>
+      </ion-col> -->
+    </ion-row>
+
+    <ion-row class="bg-white g-row-center">
+      <!-- <ion-col> -->
+      <p class="small-grey" *ngIf="products">{{totalProducts}} {{"product" | translate}}</p>
+      <!-- </ion-col> -->
+
+      <!-- <ion-col>
+        <p class="g-text-right small-grey">{{timeLeft}} {{"time_left" | translate}}</p>
+      </ion-col> -->
+    </ion-row>
+    <ion-row class="products-list" *ngIf="products">
+      <ion-col *ngFor="let product of products; index as i" class="bg-white product-col" size="5.9"
+        [ngClass]="{'even': ( i%2 == 0) }">
+
+        <ion-row>
+          <div class="container">
+            <img src="{{product.mainImage[0].url}}" alt="" (click)="openProduct(product)" />
+            <div *ngIf="product.hasShipCost" id="square" (click)="openProduct(product)">
+              <p>{{"shipment_free" | translate}}</p>
+            </div>
+            <div id="favorite">
+              <ion-icon color="primary" *ngIf="!product.isInWishList" (click)="favorite(product)" class="favorite"
+                name="heart-empty" size="large">
+              </ion-icon>
+              <ion-icon color="primary" *ngIf="product.isInWishList" (click)="favorite(product)" class="favorite"
+                name="heart" size="large"></ion-icon>
+            </div>
+          </div>
+        </ion-row>
+
+        <ion-row class="text-row" (click)="openProduct(product)">
+          <p class="title">
+            <b>{{product.name}}</b>
+          </p>
+        </ion-row>
+        <!-- <ion-row class="text-row">
+          <p class="sub-title g-grey">
+            {{product.description}}
+          </p>
+        </ion-row> -->
+        <ion-row *ngIf="product.discount" class="text-row" (click)="openProduct(product)">
+          <p class="price"><b>{{product.newPriceFormatted}}</b> <del class="g-grey">{{product.priceFormatted}}</del></p>
+        </ion-row>
+        <ion-row *ngIf="!product.discount" class="text-row" (click)="openProduct(product)">
+          <p class="price"><b>{{product.priceFormatted}}</b></p>
+        </ion-row>
+        <!-- <ion-row *ngIf="product.discount" class="time-row g-row-center">
+          <p class="time-text">{{product.timeLeft}}</p>
+        </ion-row> -->
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="products-list" *ngIf="!products">
+        <ion-col *ngFor="let t of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]; index as i" class="bg-white product-col" size="5.9"
+          [ngClass]="{'even': ( i%2 == 0) }">
+          <div  class="ads-skeleton">
+              <ion-skeleton-text animated style="width: 100%;height: 120px;margin-bottom: 10px;"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 100%;height: 10p;margin-bottom: 10px;" ></ion-skeleton-text>
+              <ion-skeleton-text animated style="width: 100%;height: 10p;margin-bottom: 10px;"></ion-skeleton-text>
+          </div>
+      
+        </ion-col>
+      </ion-row>
+
+  </ion-grid>
+
+  <ion-infinite-scroll *ngIf="products && isDownloadComplete == false" threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,40 @@
+{
+    "title": "H&M Shopping",
+    "subtitle": "Kadin Elbise",
+    "image": "../../../assets/images/p1.png",
+    "images": [
+        "../../../assets/images/p1.png",
+        "../../../assets/images/p2.png",
+        "../../../assets/images/p3.png"
+    ],
+    "priceAfterDiscount": "700TL",
+    "price": "1400TL",
+    "hasDiscount": true,
+    "isLimited": true,
+    "timeLeft": "2 day 14 hours",
+    "shipmentcost": 0,
+    "deliveryDate": "16/7 2019",
+    "options": [
+        {
+            "name": "size",
+            "values": [
+                34,
+                36,
+                38,
+                40,
+                42
+            ]
+        },
+        {
+            "name": "color",
+            "values": [
+                "black",
+                "white",
+                "pink",
+                "blue",
+                "red"
+            ]
+        }
+    ],
+    "isInWishList": true
+}

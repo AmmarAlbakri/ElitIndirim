@@ -1,0 +1,271 @@
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// Toolbar
+
+ion-toolbar {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header-md:after,
+.footer-md:before {
+  background-image: none;
+}
+
+ion-title {
+  font-size: 1em;
+}
+
+//  OVERRITTEN CLASSES
+.mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+  display: none !important;
+}
+.mat-tab-list {
+  // transform: unset !important;
+  // overflow: scroll !important;
+  justify-content: start !important;
+}
+.mat-tab-label-container {
+  overflow: scroll !important;
+  justify-content: start !important;
+}
+// .mat-tab-group {
+//   font-family: --ion-font-family !important;
+// }
+// .mat-tab-label,
+// .mat-tab-link {
+//   font-family: --ion-font-family !important;
+//   font-size: 1rem;
+// }
+// .mat-tab-list {
+//   justify-content: start;
+//   width: auto;
+//   overflow-x: scroll;
+//   transition: transform 0.5s cubic-bezier(0.35, 0, 0, 1) !important;
+// }
+ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 75px 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+// .mat-ink-bar {
+//   display: none;
+// }
+// .mat-tab-label-active {
+//   color: var(--ion-color-primary);
+//   opacity: 1 !important;
+// }
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background: var(--ion-color-primary);
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent
+  .mat-radio-ripple
+  .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background: var(--ion-color-primary);
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--ion-color-primary);
+}
+
+.mat-tab-label.mat-tab-label-active {
+  border-bottom: 2px solid var(--ion-color-primary);
+}
+
+.mat-tab-label-content {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.mat-tab-label-container {
+  padding-left: 10px;
+}
+.mat-form-field,
+.mat-checkbox,
+.mat-radio-button,
+.mat-tab-group .mat-tab-label,
+.mat-tab-link {
+  font-family: var(--ion-font-family) !important;
+}
+
+super-tabs-toolbar{
+  --st-scrollable-toolbar-padding-left: 16px;
+  background-color: white !important;
+  ion-label{
+    color:var(--ion-color-primary) !important;
+  }
+}
+.buttons-container{
+  super-tab-indicator{
+  background: black !important;
+  }
+}
+/* Search Bar */
+
+.searchbar {
+  .searchbar-input.sc-ion-searchbar-md {
+    box-shadow: 0 0 0;
+  }
+}
+
+/* Slider */
+.home-slides{
+  .swiper-container {
+      padding: 0 20px;
+    }
+  .swiper-container:before {
+    content: "";
+    background-color: var(--ion-color-primary);
+    background-image: url(assets/images/pattren.jpg);
+    background-size: 100% auto;
+    height: 90px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+}
+
+
+
+app-image-model .swiper-container:before {
+  display: none;
+}
+
+
+
+.swiper-slide img {
+  // border-radius: 6px;
+}
+
+.ad {
+  ion-col {
+    padding: 0;
+  }
+  p {
+    margin: 0;
+  }
+  width: 100%;
+  font-size: 0.8rem;
+  background-color: var(--ion-color-primary-shade) !important;
+  // padding: 7px;
+  color: white;
+  padding: 10px 5px;
+}
+
+//  GLOBAL CLASSES
+
+.toggle .opened {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+.g-text-center {
+  text-align: center;
+}
+
+.g-text-left {
+  text-align: start;
+  margin-left: 10px;
+}
+
+.g-text-right {
+  text-align: end;
+  // margin-right: 10px;
+}
+
+.g-text-right ion-icon {
+  fill: var(--ion-color-primary);
+  height: 20px;
+  width: 20px;
+  position: relative;
+  top: 2px;
+}
+
+.g-text-left p,
+.g-text-right p {
+  color: var(--ion-color-dark);
+}
+
+.g-inline {
+  display: inline;
+}
+
+.g-full-height {
+  height: 100%;
+}
+
+.g-grey {
+  color: var(--ion-color-secondary) !important;
+}
+.bg-white {
+  background-color: white;
+}
+
+.center-text {
+  justify-content: center;
+}
+
+.g-row-center {
+  justify-content: center !important;
+}
+.g-col-center {
+  justify-content: center !important;
+}
+.g-bold {
+  font-weight: bold;
+}
+
+// cards
+
+.sc-ion-card-md-h {
+  background-color: #fff;
+  box-shadow: 0px 0px 6px rgba(45, 45, 45, 0.2);
+  border-radius: 6px;
+}
+
+// form
+
+
+// #cats {
+//   height: fit-content !important;
+// }
+
+@media (min-width : 768px) and (max-width : 1023px) {
+  .header-title {
+    .header-img {
+        max-width: 18% !important;
+    }
+}
+}
+@media (min-width : 1024px) {
+  .header-title {
+    .header-img {
+        max-width: 14% !important;
+    }
+}
+}

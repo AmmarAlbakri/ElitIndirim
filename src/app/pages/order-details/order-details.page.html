@@ -1,0 +1,203 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{"order_details" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list lines="full">
+    <ion-card>
+      <h4 class="header">{{"general_information" | translate}}</h4>
+
+      <ion-item>
+        <ion-label>
+          {{'order_id'| translate}}:
+          <p>
+            {{order?._id}}
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{'date'| translate}}:
+          <p>
+            {{ order?.createdAt | date:'dd/MM/yy hh:mm a' }}
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{'status'| translate}}:
+          <p>
+            {{order?.lastNote}}
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-label>
+          {{'total'| translate}}:
+          <p>
+            {{order?.totalFormatted}}
+          </p>
+        </ion-label>
+      </ion-item> -->
+    </ion-card>
+
+    <ion-card>
+      <h4 class="header">{{"payment_information" | translate}}</h4>
+
+      <ion-item>
+        <ion-label>
+          {{'order_cost'| translate}}:
+          <p>
+            {{order?.subTotalFormatted}}
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{'discount_value'| translate}}:
+          <p class="green">
+            {{order?.product?.descountPercent}}%
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{'total'| translate}}:
+          <p class="pri">
+            {{order?.totalFormatted}}
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-label>
+          {{'payment_method'| translate}}:
+          <p>
+            {{order?.paymentMethod?.type}} {{order?.paymentMethod?.number}}
+          </p>
+        </ion-label>
+      </ion-item> -->
+    </ion-card>
+
+    <ion-card>
+      <!-- <h4 class="header">{{"address_information" | translate}}</h4> -->
+
+      <h6 class="header">{{"shipping_address" | translate}}</h6>
+
+      <ion-item>
+        <ion-label>
+          {{"full_name" | translate}}
+          <p>{{order?.shippingAddress?.fullName}} </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{"phone" | translate}}
+          <p>{{order?.shippingAddress?.phone}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{"address" | translate}}
+          <p>{{order?.shippingAddress?.address}}</p>
+        </ion-label>
+      </ion-item>
+
+      <h6 class="header">{{"payment_address" | translate}}</h6>
+
+      <ion-item>
+        <ion-label>
+          {{"full_name" | translate}}
+          <p>{{order?.paymentAddress?.fullName}} </p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{"phone" | translate}}
+          <p>{{order?.paymentAddress?.phone}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{"address" | translate}}
+          <p>{{order?.paymentAddress?.address}}</p>
+        </ion-label>
+      </ion-item>
+
+    </ion-card>
+
+    <ion-card>
+      <h4 class="header">{{"vendor_information" | translate}}</h4>
+
+      <ion-item>
+        <ion-label>
+          {{"vendor_name" | translate}}
+          <p>{{order?.vendor?._id}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{"track_id" | translate}}
+          <p>{{order?.trackCode}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          {{"shipping_cost" | translate}}
+          <p>{{order?.totalShipCostFormatted}}</p>
+        </ion-label>
+      </ion-item>
+
+    </ion-card>
+    
+    <ion-card>
+      <h4 class="header">{{"order_contracts" | translate}}</h4>
+
+      <ion-item>
+        <ion-row class="value-row">
+          <ion-col class="title-col">
+            <ion-label>{{ 'preliminary_information_form' | translate }}:</ion-label>
+          </ion-col>
+          <ion-col class="value-col">
+            <ion-button (click)="showContractDetails('preliminary_information_form', order.paymentContract1)">
+              {{'show' | translate}}
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-item>
+        <ion-row class="value-row no-border">
+          <ion-col class="title-col">
+            <ion-label>{{ 'distance_sales_agreement' | translate }}:</ion-label>
+          </ion-col>
+          <ion-col class="value-col">
+            <ion-button (click)="showContractDetails('distance_sales_agreement', order.paymentContract2)">
+              {{'show' | translate}}
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-card>
+
+
+  </ion-list>
+
+</ion-content>

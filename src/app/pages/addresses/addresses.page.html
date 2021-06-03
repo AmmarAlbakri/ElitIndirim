@@ -1,0 +1,73 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/profile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{"my_addresses" | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item style="margin-top:10px;" *ngIf="noItems" class="g-text-center">
+    <ion-grid style="padding-top:10px;">
+      <ion-row class="g-row-center">
+        <ion-icon color="primary" size="large" name="pin"></ion-icon>
+      </ion-row>
+
+      <ion-row class="g-row-center">
+        <p>
+          {{"address_empty" | translate}}
+        </p>
+      </ion-row>
+      <ion-row (click)="goToPage('add-address')" class="g-row-center">
+        <ion-button style="width: 80%;">
+          {{'add_address' | translate}}
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+
+
+
+
+
+  <ion-item *ngFor="let address of addresses; let i = index">
+    <ion-row>
+      <ion-col size="8">
+        <h1 class="g-bold">{{address.addressName}}</h1>
+        <p>
+          {{address.fullName}}
+        </p>
+        <p>
+          {{address.address}}
+        </p>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-row class="options-row">
+          <p (click)="editAddress(address)">
+            <!-- With Data -->
+            {{"edit" | translate}}
+          </p>
+        </ion-row>
+        <ion-row class="options-row">
+          <!-- <p (click)="deleteAddress(address, i)"> -->
+          <p (click)="delAddressAlert(address, i)">
+            {{"delete" | translate}}
+          </p>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+
+  <ion-toolbar *ngIf="!noItems" color="primary" style="margin-bottom: 20px;" class="add">
+    <ion-row (click)="goToPage('add-address')" class="g-row-center ">
+      <p>
+        {{'add_address' | translate}}
+      </p>
+    </ion-row>
+  </ion-toolbar>
+
+</ion-content>

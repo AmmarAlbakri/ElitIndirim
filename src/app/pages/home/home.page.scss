@@ -1,0 +1,155 @@
+.header-title {
+    .header-img {
+        max-width: 40%;
+        padding-top: 10px;
+    }
+}
+ion-grid {
+  margin: 0;
+  padding: 0;
+  // height: 100%;
+  ion-card {
+    // height: 20%;
+    margin: 0;
+  }
+}
+
+.searchbar {
+  width: 100%;
+  margin: auto;
+  background-color: var(--ion-color-primary);
+  background-image: url(/assets/images/pattren.jpg);
+  background-size: 100%;
+  padding: 10px 20px;
+  background-position: 0px -75px;
+  border: 0;
+  box-shadow: 0 0 0;
+  background-repeat: no-repeat;
+}
+.category-slides{
+  padding:0;
+  ion-slide{
+    width:100%;
+  }
+}
+.values {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: var(--ion-color-background);
+  // padding: 5px 20px;
+  // padding-bottom:10px;
+  flex-wrap: unset !important;
+  .value-button {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9em;
+    // margin: 5px;
+    --background: var(--ion-color-medium);
+    --border-radius: 50%;
+    --box-shadow: 0 0 0;
+    color: #fff;
+  }
+
+  .value-button.checked {
+    --background: var(--ion-color-primary);
+  }
+}
+.checked {
+  // background-color: var(--ion-color-primary);
+  // color:white;
+}
+.close {
+  margin-bottom: -2px;
+  margin-left: 20px;
+}
+
+.full-width {
+  width: 100%;
+  height: fit-content;
+}
+
+.ad-photo {
+   
+  padding: 0;
+}
+
+.brand {
+  border-radius: 0 20px;
+  opacity: 0.8;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  height: 90px;
+  background-color: white;
+  width: 70px;
+  position: relative;
+  .brand-img {
+   position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.text-row {
+  height: fit-content;
+  p {
+    margin: 2px;
+  }
+}
+
+.home-card {
+  border-radius: 0;
+}
+
+
+.SwipedTabs-indicatorSegment
+    {
+        -webkit-transition: 0.3s all;
+        -moz-transition:  0.3s all;
+        -o-transition:  0.3s all;
+        transition:  0.3s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+	    position: relative;
+	    top: -2px;
+	    background-color: black !important;
+    }
+    .SwipedTabs-tabs ion-segment-button
+    {
+    	border:none !important;
+    	color:var(--ion-color-primary)!important;
+    	background-color:white!important;
+    }
+     .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+    {
+        color:black !important;
+    }
+    .SwipedTabs-tabs
+    {
+    	border-bottom: solid 1px var(--ion-color-primary) !important;
+    }
+.slider-skeleton{
+  margin:20px;
+  ion-skeleton-text{
+    width: 100%;
+    height: 150px;
+  }
+}
+.ads-skeleton{
+  ion-skeleton-text{
+    margin: 10px;
+    width: 100%;
+    height: 170px;
+    margin-left: 0;
+  }
+}
+.ads-slides {
+  ion-slide {
+    border-radius: 6px;
+    overflow: hidden;
+    .thumb-img {
+      border-radius: 6px;
+      overflow: hidden;
+    }
+  }
+}

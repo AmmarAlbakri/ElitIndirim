@@ -1,0 +1,422 @@
+[
+  {
+    "name": "Kadın",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/3.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand3.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/3.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand3.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/3.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand3.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Erkek",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Çocuk",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Spor",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Outdoor",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Hamile",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Spor",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Outdoor",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Hamile",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Spor",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Outdoor",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  },
+  {
+    "name": "Hamile",
+    "images": [
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      },
+      {
+        "image": "../../../assets/images/1.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand1.png"
+      },
+      {
+        "image": "../../../assets/images/2.png",
+        "brand": "H&M",
+        "timeLeft": "2 Gün 14:23:30",
+        "brandImg": "../../../assets/images/brand2.png"
+      }
+    ]
+  }
+]

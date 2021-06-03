@@ -1,0 +1,141 @@
+<ion-app>
+  <ion-split-pane *ngIf="dir=='ltr'" when="xl">
+    <ion-menu side="start" *ngIf="dir=='ltr'" type="overlay">
+      <ion-content>
+        <div class="menu-div" style="background: url(assets/images/sidenav.png)">
+          <!-- <img src="assets/images/sidenav.png" /> -->
+
+          <div class="hi" *ngIf="isLoggedIn">
+            <p class="hello">
+              {{"hello" | translate}}
+
+            </p>
+            {{globals?.name}}
+            <p>
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <ion-list lines="none">
+          <ion-item (click)="goToPage('tabs/home')" detail="true">
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label>
+              {{'home'| translate}}
+            </ion-label>
+          </ion-item>
+
+          <ion-item (click)="goToPage('tabs/cart')" detail="true">
+            <ion-icon slot="start" name="cart"></ion-icon>
+            <ion-label>
+              {{'cart'| translate}}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <hr>
+
+        <ion-list lines="none" *ngIf="isLoggedIn">
+          <h4 class="profile">{{"my_profile" | translate}}</h4>
+          <ion-item (click)="goToPage('tabs/profile/orders')" detail="true">
+            <ion-icon slot="start" name="briefcase"></ion-icon>
+            <ion-label>
+              {{'my_orders'| translate}}
+            </ion-label>
+          </ion-item>
+          <ion-item (click)="goToPage('tabs/profile/returns')" detail="true">
+            <ion-icon slot="start" name="return-left"></ion-icon>
+            <ion-label>
+              {{'my_returns'| translate}}
+            </ion-label>
+          </ion-item>
+          <ion-item (click)="goToPage('tabs/favorite')" detail="true">
+            <ion-icon slot="start" name="heart"></ion-icon>
+            <ion-label>
+              {{'favorite'| translate}}
+            </ion-label>
+          </ion-item>
+          <ion-item (click)="logout()" detail="true">
+              <ion-icon style="color:red" slot="start" name="log-out"></ion-icon>
+              <ion-label>
+                {{'logout'| translate}}
+              </ion-label>
+            </ion-item>
+        </ion-list>
+
+        <ion-list lines="none" *ngIf="!isLoggedIn">
+            <ion-item (click)="goToPage('login')" detail="true">
+              <ion-icon style="color:green" slot="start" name="log-in"></ion-icon>
+              <ion-label>
+                {{'login'| translate}}
+              </ion-label>
+            </ion-item>
+          </ion-list>
+
+        <!-- <hr> -->
+
+        <!-- <ion-list lines="none">
+          <ion-item (click)="goToPage('profile/feedback')" detail="true">
+            <ion-icon slot="start" name="mail"></ion-icon>
+            <ion-label>
+              {{'contact_us'| translate}}
+            </ion-label>
+          </ion-item> -->
+          <!-- <ion-item (click)="openInfo('faq')" detail="true">
+            <ion-icon slot="start" name="help"></ion-icon>
+            <ion-label>
+              {{'FAQ'| translate}}
+            </ion-label>
+          </ion-item> -->
+
+        <!-- </ion-list> -->
+
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
+
+
+
+
+
+
+
+
+
+
+<!--  <ion-item *ngIf="isLoggedIn" (click)="goToPage('my-orders')" detail="true">
+            <ion-icon slot="start" name="list-box"></ion-icon>
+            <ion-label>
+              {{'my_orders'| translate}}
+            </ion-label>
+          </ion-item>
+          <ion-item (click)="goToPage('settings')" detail="true">
+            <ion-icon slot="start" name="settings"></ion-icon>
+            <ion-label>
+              {{'settings'| translate}}
+            </ion-label>
+          </ion-item> -->
+<!-- Login/Logout -->
+<!-- <ion-item *ngIf="!isLoggedIn" (click)="goToPage('login')" detail="true">
+            <ion-icon slot="start" name="log-in"></ion-icon>
+            <ion-label>
+              {{ 'login'|translate }}
+            </ion-label>
+          </ion-item>
+          <ion-item *ngIf="isLoggedIn" (click)="deleteFCMAndLogout()">
+            <ion-icon slot="start" name="log-out"></ion-icon>
+            <ion-label>
+              {{ 'logout'|translate }}
+            </ion-label>
+          </ion-item>
+          <ion-item (click)="openInfoPage('about_us')" detail="true">
+            <ion-icon slot="start" name="help-circle"></ion-icon>
+            <ion-label>
+              {{'about_us'| translate}}
+            </ion-label>
+          </ion-item> -->

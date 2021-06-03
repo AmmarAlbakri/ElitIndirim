@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>97311029954-9jkvfbap9egq7krgq1pa062isvm5pm0r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.97311029954-9jkvfbap9egq7krgq1pa062isvm5pm0r</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>97311029954-o9poqcilkrln8j4in4h8rfeceankj6fl.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCqYumpjWpZVK_rv6BjSlLmnsHRb3VGpVw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>97311029954</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>net.zerofs.elitindirim</string>
+	<key>PROJECT_ID</key>
+	<string>trendyol-257008</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trendyol-257008.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:97311029954:ios:9e64a4d7081c20178cd95b</string>
+	<key>DATABASE_URL</key>
+	<string>https://trendyol-257008.firebaseio.com</string>
+</dict>
+</plist>

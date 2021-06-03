@@ -1,0 +1,38 @@
+ion-list {
+  background: var(--ion-color-background);
+}
+
+.header {
+    margin-left: 10px;
+    font-weight: bold;
+    color: var(--ion-color-primary);
+    font-size: 1.1em;
+}
+.price {
+  color: var(--ion-color-primary);
+}
+.sc-ion-label-md-s > p {
+    margin-top: 5px;
+}
+.green{
+  color: green;
+}
+.pri{
+  color: var(--ion-color-primary);
+}
+.value-row {
+    width: 100%;
+    font-size: 0.8rem;
+    border-bottom: 0.5px solid var(--border-bottom-color);
+    .title-col {
+        font-weight: 600;
+        color: #353535;
+        margin: auto;
+    }
+    .value-col {
+        margin: auto;
+    }
+    .status {
+        font-weight: 600;
+    }
+}
